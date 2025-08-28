@@ -46,7 +46,7 @@ body {
 
 .section-title {
     font-family: var(--font-islamic);
-    font-size: 2.8rem;
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 50px;
     color: var(--primary-color);
@@ -101,7 +101,7 @@ body {
 /* ======== HERO SECTION ======== */
 #hero { min-height: 70vh; display: flex; align-items: center; text-align: center; background: linear-gradient(135deg, rgba(51, 163, 255, 0.05), rgba(126, 214, 163, 0.05)); }
 .dark-mode #hero { background: linear-gradient(135deg, rgba(22, 33, 62, 0.2), rgba(44, 62, 80, 0.2)); }
-.hero-title { font-family: var(--font-islamic); font-size: 4rem; margin-bottom: 25px; font-weight: 700; }
+.hero-title { font-family: var(--font-islamic); font-size: 4.5rem; margin-bottom: 25px; font-weight: 700; }
 .hero-description { font-size: 1.2rem;  font-family: var(--font-heading); max-width: 600px; margin: 0 auto 20px; opacity: 0.9; }
 .sadaqa-dedication { font-size: 1.1rem; font-family: var(--font-heading); font-weight: bold; color: var(--primary-color); background-color: rgba(255, 255, 255, 0.7); padding: 10px 20px; border-radius: 8px; display: inline-block; margin-bottom: 30px; }
 .dark-mode .sadaqa-dedication { background-color: rgba(0, 0, 0, 0.3); }
@@ -218,3 +218,4 @@ body {
 
 
 }
+
