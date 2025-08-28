@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>أذكار ودعاء | صدقة جارية</title>
+    <meta
+      name="description"
+      content="موقع إلكتروني لعرض أذكار الصباح والمساء، أدعية، وأسماء الله الحسنى. صدقة جارية عن روح المرحوم يونس سالم عرابي."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Noto+Naskh+Arabic:wght@400;700&family=Scheherazade+New:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a href="#" class="logo-link">
+          <div class="logo">
+            <svg
+              class="logo-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+            </svg>
+            <div class="logo-text">
+              <h1>أذكار ودعاء</h1>
+              <p>حصنك اليومي من الكتاب والسنة</p>
+            </div>
+          </div>
+        </a>
+
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li><a href="#hero" class="nav-link">الرئيسية</a></li>
+            <li><a href="#athkar" class="nav-link">الأذكار</a></li>
+            <li><a href="#duas" class="nav-link">أدعية من القرآن والسنة</a></li>
+            <li><a href="#prayer-times" class="nav-link">أوقات الصلاة</a></li>
+            <li><a href="#footer" class="nav-link">عن الموقع</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <button
+            id="theme-toggle"
+            class="icon-btn"
+            aria-label="تبديل الوضع الليلي/النهاري"
+            title="الوضع الداكن/النهاري"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+          </button>
+          <button
+            id="menu-toggle"
+            class="icon-btn menu-btn"
+            aria-label="فتح القائمة"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h2 class="hero-title">
+              "أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ"
+            </h2>
+            <p class="hero-description">
+              ابدأ يومك بذكر الله، واجعل لسانك رطباً بذكره في كل وقت.
+            </p>
+            <p class="sadaqa-dedication">
+              صدقة جارية عن روح المرحوم يونس سالم عرابي
+            </p>
+            <a href="#athkar" class="cta-button">تصفح الأذكار</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="athkar" class="section-padding">
+        <div class="container">
+          <h3 class="section-title">أذكار الصباح والمساء</h3>
+          <div class="tabs">
+            <button class="tab-link active" data-tab="morning">
+              أذكار الصباح
+            </button>
+            <button class="tab-link" data-tab="evening">أذكار المساء</button>
+          </div>
+          <div id="athkar-grid" class="athkar-grid"></div>
+        </div>
+      </section>
+
+      <section id="duas" class="section-padding">
+        <div class="container">
+          <h3 class="section-title">أدعية من القرآن والسنة</h3>
+          <div id="duas-grid" class="athkar-grid"></div>
+        </div>
+      </section>
+
+      <section id="player" class="audio-player-section">
+        <div class="container">
+          <p id="now-playing">مشغل الصوت</p>
+          <audio id="audio-player" controls></audio>
+        </div>
+      </section>
+
+      <section id="stats" class="section-padding">
+        <div class="container">
+          <h3 class="section-title">إحصائياتك اليوم</h3>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <h4>مجموع الأذكار المقروءة</h4>
+              <p id="total-read-count">0</p>
+            </div>
+            <div class="stat-card">
+              <h4>الأذكار الفريدة المقروءة</h4>
+              <p id="unique-read-count">0</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="prayer-times" class="section-padding">
+        <div class="container">
+          <h3 class="section-title">أوقات الصلاة</h3>
+          <div class="prayer-form">
+            <input
+              type="text"
+              id="city-input"
+              placeholder="اكتب اسم المدينة (مثال: Makkah)"
+            />
+            <input
+              type="text"
+              id="country-input"
+              placeholder="اكتب اسم البلد (مثال: Saudi Arabia)"
+            />
+            <button id="fetch-prayer-btn">جلب أوقات الصلاة</button>
+          </div>
+          <div id="prayer-results" class="prayer-results-container">
+            <div
+              id="next-prayer-container"
+              class="next-prayer-card"
+              style="display: none"
+            >
+              <h4>الصلاة القادمة</h4>
+              <p id="next-prayer-name">-</p>
+              <p id="next-prayer-countdown">-</p>
+            </div>
+            <div id="prayer-timings-grid" class="prayer-timings-grid"></div>
+            <p id="prayer-api-error" class="api-error"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer" class="site-footer">
+      <div class="container">
+        <p>
+          هذا الموقع صدقة جارية عن روح المرحوم يونس سالم عرابي. نسأل الله له
+          الرحمة والمغفرة.
+        </p>
+        <div class="footer-share">
+          <p>ساهم في نشر الخير:</p>
+          <button
+            id="share-btn-footer"
+            class="icon-btn"
+            aria-label="مشاركة الموقع"
+            title="مشاركة الموقع"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+              <polyline points="16 6 12 2 8 6"></polyline>
+              <line x1="12" y1="2" x2="12" y2="15"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
