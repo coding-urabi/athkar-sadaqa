@@ -35,6 +35,11 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
 .container {
     max-width: 1140px;
     width: 90%;
@@ -46,7 +51,7 @@ body {
 
 .section-title {
     font-family: var(--font-islamic);
-    font-size: 3rem;
+    font-size: 2.8rem;
     text-align: center;
     margin-bottom: 50px;
     color: var(--primary-color);
@@ -66,63 +71,73 @@ body {
     border-bottom: 1px solid var(--light-border);
     padding: 0 5%;
 }
-.dark-mode .site-header { background-color: rgba(18, 18, 18, 0.8); border-bottom: 1px solid var(--dark-border); }
+body.dark-mode .site-header { 
+    background-color: rgba(18, 18, 18, 0.8); 
+    border-bottom: 1px solid var(--dark-border); 
+}
+
 .site-header .container { width: 100%; display: flex; justify-content: space-between; align-items: center; height: 80px; }
 .logo-link { text-decoration: none; color: inherit; }
 .logo { display: flex; align-items: center; gap: 15px; }
 .logo-icon { color: var(--primary-color); }
 .logo-text h1 { font-family: var(--font-heading); margin: 0; font-size: 1.7rem; color: var(--primary-color); line-height: 1.2; }
 .logo-text p { margin: 0; font-size: 0.85rem; opacity: 0.7; line-height: 1.2; }
-
-/* -- التعديل الصحيح هنا -- */
 .nav-list { display: flex; list-style: none; margin: 0; padding: 0; gap: 30px; }
-.nav-link {
-    text-decoration: none;
-    color: var(--light-text);
-    font-family: var(--font-heading); /* تطبيق خط العناوين (Amiri) */
-    font-weight: 700; /* جعل الخط أعرض ليتناسب مع الهوية */
-    font-size: 1.1rem;
-    padding-bottom: 5px;
-    position: relative;
-    transition: var(--transition);
-}
-.dark-mode .nav-link { color: var(--dark-text); }
+.nav-link { text-decoration: none; color: var(--light-text); font-family: var(--font-heading); font-weight: 700; font-size: 1.1rem; padding-bottom: 5px; position: relative; transition: var(--transition); }
+body.dark-mode .nav-link { color: var(--dark-text); }
 .nav-link:hover { color: var(--primary-color); }
 .nav-link::after { content: ''; position: absolute; bottom: 0; right: 0; width: 0; height: 2px; background-color: var(--primary-color); transition: width 0.3s ease-out; }
 .nav-link:hover::after { width: 100%; }
-
 .header-actions { display: flex; gap: 12px; }
 .icon-btn { background-color: var(--light-bg); border: 1px solid var(--light-border); border-radius: 50%; width: 44px; height: 44px; cursor: pointer; display: flex; justify-content: center; align-items: center; color: var(--light-text); transition: var(--transition); }
-.dark-mode .icon-btn { background-color: var(--dark-card-bg); border-color: var(--dark-border); color: var(--dark-text); }
+body.dark-mode .icon-btn { 
+    background-color: var(--dark-card-bg); 
+    border-color: var(--dark-border); 
+    color: var(--dark-text); 
+}
 .icon-btn:hover { background-color: var(--primary-color); color: white; border-color: var(--primary-color); transform: scale(1.1); }
 .menu-btn { display: none; }
 
 
 /* ======== HERO SECTION ======== */
 #hero { min-height: 70vh; display: flex; align-items: center; text-align: center; background: linear-gradient(135deg, rgba(51, 163, 255, 0.05), rgba(126, 214, 163, 0.05)); }
-.dark-mode #hero { background: linear-gradient(135deg, rgba(22, 33, 62, 0.2), rgba(44, 62, 80, 0.2)); }
-.hero-title { font-family: var(--font-islamic); font-size: 4.5rem; margin-bottom: 25px; font-weight: 700; }
-.hero-description { font-size: 1.2rem;  font-family: var(--font-heading); max-width: 600px; margin: 0 auto 20px; opacity: 0.9; }
-.sadaqa-dedication { font-size: 1.1rem; font-family: var(--font-heading); font-weight: bold; color: var(--primary-color); background-color: rgba(255, 255, 255, 0.7); padding: 10px 20px; border-radius: 8px; display: inline-block; margin-bottom: 30px; }
-.dark-mode .sadaqa-dedication { background-color: rgba(0, 0, 0, 0.3); }
+body.dark-mode #hero { 
+    background: linear-gradient(135deg, rgba(22, 33, 62, 0.2), rgba(44, 62, 80, 0.2)); 
+}
+.hero-title { font-family: var(--font-islamic); font-size: 4rem; margin-bottom: 25px; font-weight: 700; }
+.hero-description { font-family: var(--font-heading); font-size: 1.2rem; max-width: 600px; margin: 0 auto 20px; opacity: 0.9; }
+.sadaqa-dedication { font-family: var(--font-heading); font-size: 1.1rem; font-weight: bold; color: var(--primary-color); background-color: rgba(255, 255, 255, 0.7); padding: 10px 20px; border-radius: 8px; display: inline-block; margin-bottom: 30px; }
+body.dark-mode .sadaqa-dedication { 
+    background-color: rgba(0, 0, 0, 0.3); 
+}
 .cta-button { background-color: var(--primary-color); color: white; padding: 15px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: var(--transition); box-shadow: 0 4px 20px rgba(51, 163, 255, 0.4); }
 .cta-button:hover { transform: translateY(-3px); box-shadow: 0 6px 25px rgba(51, 163, 255, 0.6); }
 
 /* ======== ATHKAR & DUAS CARDS ======== */
 .athkar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: var(--base-padding); }
 .athkar-card { background-color: var(--light-card-bg); border: 1px solid var(--light-border); border-radius: var(--border-radius); padding: var(--base-padding); box-shadow: var(--shadow); display: flex; flex-direction: column; transition: var(--transition); }
-.dark-mode .athkar-card { background-color: var(--dark-card-bg); border-color: var(--dark-border); }
+body.dark-mode .athkar-card { 
+    background-color: var(--dark-card-bg); 
+    border-color: var(--dark-border); 
+}
 .card-title { font-family: var(--font-heading); color: var(--primary-color); margin-top: 0; font-size: 1.5rem; }
 .card-text { flex-grow: 1; font-size: 1.2rem; white-space: pre-wrap; margin-bottom: 15px; font-family: var(--font-islamic); font-weight: 400; }
 .tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; flex-wrap: wrap;}
 .tab-link { font-family: var(--font-heading); background: none; border: 2px solid var(--light-border); color: var(--light-text); padding: 10px 25px; font-size: 1.1rem; border-radius: 50px; cursor: pointer; transition: var(--transition); }
-.dark-mode .tab-link { border-color: var(--dark-border); }
-.tab-link.active, .tab-link:hover { background-color: var(--primary-color); color: white; border-color: var(--secondary-color); }
+body.dark-mode .tab-link { 
+    border-color: var(--dark-border); 
+    color: var(--dark-text);
+}
+.tab-link.active, .tab-link:hover { background-color: var(--secondary-color); color: white; border-color: var(--secondary-color); }
 .athkar-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
 .card-virtue { background-color: var(--light-bg); border-radius: 8px; padding: 10px; font-size: 0.9rem; margin-top: auto; border-right: 3px solid var(--secondary-color); }
-.dark-mode .card-virtue { background-color: var(--dark-bg); }
+body.dark-mode .card-virtue { 
+    background-color: var(--dark-bg); 
+}
 .card-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 15px; border-top: 1px solid var(--light-border); margin-top: 15px; }
-.dark-mode .card-footer { border-top-color: var(--dark-border); }
+body.dark-mode .card-footer { 
+    border-top-color: var(--dark-border); 
+}
 .card-count { background-color: var(--accent-color); color: #333; padding: 5px 15px; border-radius: 50px; font-weight: bold; }
 .card-actions { display: flex; gap: 10px; }
 .card-btn { background-color: var(--primary-color); color: white; border: none; padding: 10px 15px; border-radius: 8px; cursor: pointer; transition: var(--transition); }
@@ -131,91 +146,87 @@ body {
 
 /* ======== ASMA UL HUSNA ======== */
 .asma-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; text-align: center; }
-.asma-card { 
-    background-color: var(--light-card-bg); 
-    border-radius: var(--border-radius); 
-    padding: 20px 10px; 
-    font-family: var(--font-islamic); /* تطبيق الخط الإسلامي */
-    font-size: 1.8rem; /* تكبير الخط */
-    box-shadow: var(--shadow); 
-    transition: var(--transition); 
+.asma-card { background-color: var(--light-card-bg); border-radius: var(--border-radius); padding: 20px 10px; font-family: var(--font-islamic); font-size: 1.8rem; box-shadow: var(--shadow); transition: var(--transition); }
+body.dark-mode .asma-card { 
+    background-color: var(--dark-card-bg); 
 }
-.dark-mode .asma-card { background-color: var(--dark-card-bg); }
 .asma-card:hover { color: var(--primary-color); transform: scale(1.05); }
 
 /* ======== OTHER SECTIONS ======== */
 .audio-player-section { background-color: var(--light-card-bg); padding: var(--base-padding); text-align: center; border-top: 1px solid var(--light-border); border-bottom: 1px solid var(--light-border); }
-.dark-mode .audio-player-section { background-color: var(--dark-card-bg); border-color: var(--dark-border); }
+body.dark-mode .audio-player-section { 
+    background-color: var(--dark-card-bg); 
+    border-color: var(--dark-border); 
+}
 #now-playing { margin: 0 0 10px 0; font-weight: bold; }
 #audio-player { width: 100%; max-width: 600px; }
 .stats-grid, .prayer-timings-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--base-padding); }
 .stat-card, .prayer-time-card { background-color: var(--light-card-bg); border: 1px solid var(--light-border); padding: var(--base-padding); border-radius: var(--border-radius); text-align: center; box-shadow: var(--shadow); }
-.dark-mode .stat-card, .dark-mode .prayer-time-card { background-color: var(--dark-card-bg); border-color: var(--dark-border); }
+body.dark-mode .stat-card, body.dark-mode .prayer-time-card { 
+    background-color: var(--dark-card-bg); 
+    border-color: var(--dark-border); 
+}
 .stat-card h4, .prayer-time-card h5 { margin: 0 0 10px 0; color: var(--secondary-color); }
 .stat-card p, .prayer-time-card p { font-size: 2rem; font-weight: bold; margin: 0; color: var(--primary-color); }
 .prayer-form { display: flex; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; justify-content: center; }
 .prayer-form input, .prayer-form button { padding: 12px; border-radius: 8px; border: 1px solid var(--light-border); font-family: var(--font-body); font-size: 1rem; flex-grow: 1; }
 .prayer-form button { flex-grow: 0; }
-.dark-mode .prayer-form input { background-color: var(--dark-card-bg); border-color: var(--dark-border); color: var(--dark-text); }
+body.dark-mode .prayer-form input { 
+    background-color: var(--dark-card-bg); 
+    border-color: var(--dark-border); 
+    color: var(--dark-text); 
+}
 .prayer-form button { background-color: var(--primary-color); color: white; cursor: pointer; border: none; transition: var(--transition); }
 .next-prayer-card { background-color: var(--secondary-color); color: white; text-align: center; padding: var(--base-padding); border-radius: var(--border-radius); margin-bottom: 30px; }
 .prayer-time-card.next { border: 2px solid var(--accent-color); transform: scale(1.05); }
 .api-error { color: #e74c3c; text-align: center; margin-top: 20px; }
-.site-footer { background-color: var(--dark-bg); font-family: var(--font-heading); text-align: center; padding: 30px var(--base-padding); color: #fff; }
-.dark-mode .site-footer { background-color: var(--dark-card-bg); }
+.site-footer { background-color: var(--dark-bg); text-align: center; padding: 30px var(--base-padding); color: #fff; }
+body.dark-mode .site-footer { 
+    background-color: var(--dark-card-bg); 
+}
 .footer-share { margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); }
-.footer-share p { margin: 0 0 10px 0; font-family: var(--font-heading); font-size: 0.9rem;  }
+.footer-share p { margin: 0 0 10px 0; font-size: 0.9rem; }
 .footer-share .icon-btn { margin: 0 auto; }
 
 /* ======== RESPONSIVE DESIGN ======== */
 @media (max-width: 992px) {
     .main-nav { position: fixed; top: 80px; right: -100%; width: 100%; height: calc(100vh - 80px); background-color: var(--light-card-bg); transition: right 0.4s ease-in-out; padding-top: 40px; }
-    .dark-mode .main-nav { background-color: var(--dark-card-bg); }
+    body.dark-mode .main-nav { 
+        background-color: var(--dark-card-bg); 
+    }
     .main-nav.active { right: 0; }
     .nav-list { flex-direction: column; align-items: center; gap: 25px; }
     .nav-link { font-size: 1.5rem; }
     .menu-btn { display: flex; }
 }
-
-
 @media (max-width: 768px) {
     .site-header { position: static; }
+    body { padding-top: 0; }
     .site-header .container { flex-direction: row; height: 70px; }
     .main-nav { top: 70px; height: calc(100vh - 70px); }
     .logo-text h1 { font-size: 1.5rem; }
     .logo-text p { display: none; }
-    .hero-title { font-size: 3rem; }
     .athkar-grid { grid-template-columns: 1fr; }
-    /* -- التعديلات الجديدة للهاتف -- */
     .hero-title {
-        font-size: 2.5rem; /* تصغير حجم عنوان الهيرو الرئيسي */
+        font-size: 2.5rem;
     }
     .section-title {
-        font-size: 2.2rem; /* تصغير حجم عناوين الأقسام */
+        font-size: 2.2rem;
+    }
+    .prayer-form input, .prayer-form button {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+    .prayer-time-card h5 {
+        font-size: 0.9rem;
+    }
+    .prayer-time-card p {
+        font-size: 1.5rem;
+    }
+    .next-prayer-card {
+        padding: 15px;
+    }
+    #next-prayer-name {
+        font-size: 1.4rem;
+    }
 }
-
-/* -- تعديلات قسم أوقات الصلاة للهاتف -- */
-.prayer-form input, .prayer-form button {
-    font-size: 0.9rem; /* تصغير خط حقول الإدخال والزر */
-    padding: 10px;
-}
-
-.prayer-time-card h5 {
-    font-size: 0.9rem; /* تصغير خط اسم الصلاة (الفجر، الظهر..) */
-}
-
-.prayer-time-card p {
-    font-size: 1.5rem; /* تصغير خط وقت الصلاة (04:30) */
-}
-
-.next-prayer-card {
-    padding: 15px;
-}
-
-#next-prayer-name {
-    font-size: 1.4rem; /* تصغير خط اسم الصلاة القادمة */
-}
-
-
-}
-
