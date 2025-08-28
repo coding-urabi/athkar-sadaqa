@@ -175,36 +175,6 @@ body {
     .nav-list { flex-direction: column; align-items: center; gap: 25px; }
     .nav-link { font-size: 1.5rem; }
     .menu-btn { display: flex; }
-    /* -- التعديلات الجديدة للهاتف -- */
-    .hero-title {
-        font-size: 2.5rem; /* تصغير حجم عنوان الهيرو الرئيسي */
-    }
-    .section-title {
-        font-size: 2.2rem; /* تصغير حجم عناوين الأقسام */
-    }
-
-    /* -- تعديلات قسم أوقات الصلاة للهاتف -- */
-.prayer-form input, .prayer-form button {
-    font-size: 0.9rem; /* تصغير خط حقول الإدخال والزر */
-    padding: 10px;
-}
-
-.prayer-time-card h5 {
-    font-size: 0.9rem; /* تصغير خط اسم الصلاة (الفجر، الظهر..) */
-}
-
-.prayer-time-card p {
-    font-size: 1.5rem; /* تصغير خط وقت الصلاة (04:30) */
-}
-
-.next-prayer-card {
-    padding: 15px;
-}
-
-#next-prayer-name {
-    font-size: 1.4rem; /* تصغير خط اسم الصلاة القادمة */
-}
-
 }
 
 
@@ -245,5 +215,6 @@ body {
 #next-prayer-name {
     font-size: 1.4rem; /* تصغير خط اسم الصلاة القادمة */
 }
+
 
 }
